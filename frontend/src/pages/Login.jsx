@@ -6,9 +6,10 @@ import gnc_banner from "../assets/images/login/main-backdrop.png";
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import baseURL from "../constant/constant.js";
 import { toast } from 'react-hot-toast';
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
-
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: ""
@@ -53,7 +54,7 @@ export const Login = () => {
       <div className="login-main-container w-100 vh-100 row m-0">
         <div className="login-form-container d-flex justify-content-center align-items-start flex-column vh-100 p-4 col-12 col-sm-5 col-lg-3">
           <div className='d-flex justify-content-center align-items-center w-100'>
-            <img id='clg-logo' src={gnc_logo} alt="" />
+            <img id='clg-logo' style={{ cursor: 'pointer' }}  src={gnc_logo} alt="gnc logog" onClick={() => navigate('/')}/>
           </div>
           <div className="header h2 mb-4 text-center">Log in to your account</div>
           <form className='w-100' onSubmit={handleLogin}>
