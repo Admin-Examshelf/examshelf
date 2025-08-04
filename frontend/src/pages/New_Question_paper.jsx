@@ -99,7 +99,7 @@ export const New_Question_paper = () => {
       setTenMarkQuestions((prev) => prev.filter((_, i) => i !== index));
     }
   };
-
+  
   const updateQuestion = (index, value, marksType) => {
     if (marksType === "3") {
       const updatedQuestions = [...threeMarkQuestions];

@@ -44,7 +44,13 @@ export const add_user = async (req, res) => {
         if(newstaff){
             await newstaff.save();
             await sendEmail(staffname, email , password , staffId ,  department , role );
-            res.status(201).json({newstaff});
+            res.status(201).json({user : {
+                staffName : newstaff.staffname,
+                staffId : newstaff.staffId,
+                email : newstaff.email,
+                department : newstaff.department,
+                role : newstaff.role,
+            }});
         }
         else {
             res.status(400).json({ error: 'Invalid user.' });
