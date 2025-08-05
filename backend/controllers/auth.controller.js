@@ -70,7 +70,13 @@ export const login = async( req , res)=>{
             return res.status(400).json({error : "Invalid Username or Password"});
         }
         generateToken(staff._id , res);
-        res.status(200).json({staff});
+         res.status(201).json({user : {
+            staffName : newstaff.staffname,
+            staffId : newstaff.staffId,
+            email : newstaff.email,
+            department : newstaff.department,
+            role : newstaff.role,
+        }});
     }
     catch(error){
         console.log("Error in the login controller :",error);
