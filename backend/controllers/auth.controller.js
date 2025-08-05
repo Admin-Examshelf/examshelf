@@ -71,11 +71,11 @@ export const login = async( req , res)=>{
         }
         generateToken(staff._id , res);
         res.status(200).json({user : {
-            staffName : newstaff.staffname,
-            staffId : newstaff.staffId,
-            email : newstaff.email,
-            department : newstaff.department,
-            role : newstaff.role,
+            staffName : staff.staffname,
+            staffId : staff.staffId,
+            email : staff.email,
+            department : staff.department,
+            role : staff.role,
         }});
     }
     catch(error){
