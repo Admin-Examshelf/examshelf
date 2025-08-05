@@ -70,7 +70,7 @@ export const login = async( req , res)=>{
             return res.status(400).json({error : "Invalid Username or Password"});
         }
         generateToken(staff._id , res);
-         res.status(201).json({user : {
+        res.status(200).json({user : {
             staffName : newstaff.staffname,
             staffId : newstaff.staffId,
             email : newstaff.email,
