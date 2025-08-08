@@ -10,4 +10,4 @@ export const Root_Layout = () => {
       <Toaster/>
     </>
   )
-};
+}; 

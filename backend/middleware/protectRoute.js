@@ -3,7 +3,7 @@ import Staff  from "../models/staff.model.js"
  
 const protectRoute = async ( req , res , next ) => {
     try {
-        const token = req.cookies.jwt;
+        const token = req.cookies.staff;
         if(!token) {
             return res.status(400).json({error : "Unauthorized Staff : No token provided"})
         }
